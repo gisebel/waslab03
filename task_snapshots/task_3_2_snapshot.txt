@@ -1,1 +1,42 @@
+Hem votat la primera vegada però no hem guardat la response i després hem tornat a votar i em rebut el següent missatge:
+
+{
+    "error": "La validació ha fallat: Ja has votat en aquesta enquesta"
+}
+
+
+Per fer la crida hem enviat una petició POST a la direcció:
+
+https://mastodont.cat/api/v1/polls/122282/votes
+
+Amb el body (amb format x-www-form-urlencoded) amb la següent key/value
+
+key = choices[]
+value = 0
+
+La resposta hauria sigut algo així (hem agafat la consulta del 3.1 modificant el valor votat (Sí)).
+
+{
+    "id": "122282",
+    "expires_at": "2023-09-28T15:43:53.732Z",
+    "expired": false,
+    "multiple": false,
+    "votes_count": 8,
+    "voters_count": 8,
+    "options": [
+        {
+            "title": "Sí",
+            "votes_count": 4
+        },
+        {
+            "title": "Gaire bé sí",
+            "votes_count": 4
+        },
+        {
+            "title": "Falta fer el commit i ja està",
+            "votes_count": 1
+        }
+    ],
+    "emojis": []
+}
 
